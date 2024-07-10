@@ -1,0 +1,17 @@
+Palindrome Permutation II.
+
+Given a string s, return all the palindromic permutations (without duplicates) of it.
+
+You may return the answer in any order. If s has no palindromic permutation, return an empty list.
+
+
+Solution:
+At first, we can check if it is possible to build a valid palindrome. We can count letters in s. If s has more than one letter with an odd count then it is impossible to build a palindrome.
+Second, we should define the initial state of the palindrome. If s has a letter with an odd number of repetitions then this letter is a middle letter of palindrome.
+Third, we can implement a backtracking solution to build all valid palindromes.
+
+Approach:
+1. Count the number of letters in s.
+2. Check if it is possible to build a valid palindrome.
+3. Set the initial state of the palindrome.
+4. Implement backtracking solution. The base case is when the counter of the letter is empty. The recursion case is adding a current letter to the palindrome and decreasing the counter.
