@@ -1,0 +1,18 @@
+Reverse Substrings Between Each Pair of Parentheses.
+
+You are given a string s that consists of lower case English letters and brackets.
+Reverse the strings in each pair of matching parentheses, starting from the innermost one.
+Your result should not contain any brackets.
+
+Solution:
+We can add letters and open brackets to the stack while we do not find close bracket. When we find a close bracket then pop elements from the stack while it is not an open bracket.
+
+Approach
+1. Init stack.
+2. Iterate string by characters.
+3. Append characters to the stack if it is not a close bracket.
+4. Extract the last characters from the stack to a list while the character is not an open bracket.
+5. Add characters from the list to the tail of the stack.
+
+Time complexity: O(n ^ 2).
+Space complexity: O(n).
