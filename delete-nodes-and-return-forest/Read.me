@@ -1,0 +1,19 @@
+# Delete Nodes And Return Forest
+
+Given the root of a binary tree, each node in the tree has a distinct value.
+
+After deleting all nodes with a value in to_delete, we are left with a forest (a disjoint union of trees).
+
+Return the roots of the trees in the remaining forest. You may return the result in any order.
+
+Solution:
+We can use DFS to solve this problem. We should use the current node and parent node as parameters.
+
+1. Convert a list of nodes that should be deleted to a list of hashes. It helps us to check nodes with time complexity O(1).
+2. Implement DFS:
+	2.1. If we have to delete the current node then check if the parent node exists. If the parent node exists then identify which one child node (left or right) is the current node. Remove the relation from the parent node to the current node.
+	2.2. If the current node does not exist in the list of nodes that we have to delete and there is no parent node then add the current to the results list. The current node will be the root of one of the trees.
+	2.3. If the current node has a left child and/or right child then implement recursion. If the current node does not exist in the list then the current node will be a parent node in recursive case.
+
+Time complexity: O(n).
+Space complexity: O(n).
