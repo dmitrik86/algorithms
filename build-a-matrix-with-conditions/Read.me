@@ -1,0 +1,29 @@
+# Build a Matrix With Conditions.
+
+You are given a positive integer k. You are also given:
+
+a 2D integer array rowConditions of size n where rowConditions[i] = [abovei, belowi], and
+a 2D integer array colConditions of size m where colConditions[i] = [lefti, righti].
+The two arrays contain integers from 1 to k.
+
+You have to build a k x k matrix that contains each of the numbers from 1 to k exactly once. The remaining cells should have the value 0.
+
+The matrix should also satisfy the following conditions:
+
+The number abovei should appear in a row that is strictly above the row at which the number belowi appears for all i from 0 to n - 1.
+The number lefti should appear in a column that is strictly left of the column at which the number righti appears for all i from 0 to m - 1.
+Return any matrix that satisfies the conditions. If no answer exists, return an empty matrix.
+
+## Solution.
+
+It is possible to represent the row conditions and col conditions like a graph. Some nodes depend on other (parent) nodes. We can use topological sorting to determine the dependence of nodes. After that, we can determine if it is possible to build a grid. Finally, we can build the grid using the order of nodes.
+
+### Steps.
+
+1. Build dependence on the nodes to implement topological sorting.
+2. Build nodes order.
+3. Determine if it is possible to build a grid.
+4. Build the grid using node order.
+
+Time complexity: O(n).
+Space complexity: O(n).
