@@ -1,0 +1,25 @@
+# Filling Bookcase Shelves.
+
+You are given an array books where books[i] = [thicknessi, heighti] indicates the thickness and height of the ith book. You are also given an integer shelfWidth.
+
+We want to place these books in order onto bookcase shelves that have a total width shelfWidth.
+
+We choose some of the books to place on this shelf such that the sum of their thickness is less than or equal to shelfWidth, then build another level of the shelf of the bookcase so that the total height of the bookcase has increased by the maximum height of the books we just put down. We repeat this process until there are no more books to place.
+
+Note that at each step of the above process, the order of the books we place is the same order as the given sequence of books.
+
+For example, if we have an ordered list of 5 books, we might place the first and second book onto the first shelf, the third book on the second shelf, and the fourth and fifth book on the last shelf.
+Return the minimum possible height that the total bookshelf can be after placing shelves in this manner.
+
+## Solution.
+
+It is possible to solve this task using a dynamic programming approach.
+There are three parameters: the index of the current book (we can not change the order of the books), the height of the current row, and the width of the current row.
+The base case is the index of the current book more than the books in the list.
+The recursive case has three branches:
+1. If the row width with the current book is less than the shelf width and the current book height is more than the row height then set the current book to the current row or to the next row. Also, change the height of the current row.
+2. If the row width with the current book is less than the shelf width and the current book height is less than the row height then set the current book to the current row or to the next row.
+3. If the row width with the current book is more than the shelf width then set to the next row.
+
+Time complexity: O(n∗h∗w), n - number of books, h - total height of books, w - width of shelf
+Space complexity: O(n∗h∗w), n - number of books, h - total height of books, w - width of shelf
