@@ -1,0 +1,14 @@
+# Optimal Account Balancing.
+
+You are given an array of transactions transactions where transactions[i] = [fromi, toi, amounti] indicates that the person with ID = fromi gave amounti $ to the person with ID = toi.
+
+Return the minimum number of transactions required to settle the debt.
+
+## Solution:
+
+Define the number of persons and the final balance of people after all transactions.
+Define the lists of parsons with negative and positive balances.
+Implement the backtracking solution. Use index and number of transactions as params. A simple optimization is when the current number of transactions is more than found one. The final case of recursion is an index of current element more then a list of people with positive or negative balances. The recursive case is an iteration throw list of people with a positive or negative balance (the oposite one with a list in recursion params).  
+
+Time complexity: O(n!).
+Space complexity: O(n).
