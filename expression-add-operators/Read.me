@@ -1,0 +1,17 @@
+# Expression Add Operators
+
+Given a string num that contains only digits and an integer target, return all possibilities to insert the binary operators '+', '-', and/or '*' between the digits of num so that the resultant expression evaluates to the target value.
+
+Note that operands in the returned expressions should not contain leading zeros.
+
+## Solution
+
+It is possible to solve this problem using recursion. We use the current index, current expression, and current value as the parameters.
+The base case is when the current index equals the length of the number. We can add the current expression to the result if the calculation of the expression is equal to the target.
+Recursion case.
+If the current value does not equal 0 then we can add the current number to the expression.
+If the expression is empty then interrupt recursion because we must not add a sign before the number.
+Iterate signs list. Use each sign with expression and current value.
+
+Time complexity: O(n∗n^4).
+Space complexity: O(n).
