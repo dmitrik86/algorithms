@@ -10,14 +10,12 @@ The matching should cover the entire input string (not partial).
 
 It is possible to solve this problem using a dynamic program approach.
 Base cases:
-
-If the index of the string is equal to the length of the string and the index of the pattern is equal to the length of the pattern then return True.
-If the index of the pattern is equal to the length of the pattern and the index of the string is less than the length of the string then return False.
+1. If the index of the string is equal to the length of the string and the index of the pattern is equal to the length of the pattern then return True.
+2. If the index of the pattern is equal to the length of the pattern and the index of the string is less than the length of the string then return False.
 Recursive cases:
-If the index of the string is equal to the length of the string and the index of the pattern is less than the length of the pattern then iterate the pattern while the current item of the pattern is equal to *. Return if the index of the pattern is equal to the length of the pattern.
-Recursive case:
-If the current character from the string is equal to the current character of the pattern or the current character of the pattern is equal to ? then move to the next characters of the string and pattern simultaneously.
-If the current character of the pattern is equal to * then move to the next characters simultaneously or move to the next string character or move to the next character of the pattern.
+1. If the index of the string is equal to the length of the string and the index of the pattern is less than the length of the pattern then iterate the pattern while the current item of the pattern is equal to *. Return if the index of the pattern is equal to the length of the pattern.
+2. If the current character from the string is equal to the current character of the pattern or the current character of the pattern is equal to ? then move to the next characters of the string and pattern simultaneously.
+3. If the current character of the pattern is equal to * then move to the next characters simultaneously or move to the next string character or move to the next character of the pattern.
 
 Time complexity: O(m∗n). m - the length of the pattern, n - the length of the string.
 Space complexity: O(m∗n). m - the length of the pattern, n - the length of the string.
